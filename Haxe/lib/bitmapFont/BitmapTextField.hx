@@ -1232,7 +1232,7 @@ class BitmapTextField extends Sprite
 	#if !flash
 	override function set_width(value:Float):Float
 	#else
-	@:setter(width) function set_width(value:Float):Void
+	@:setter(width) function set_width(value:Float):Float
 	#end
 	{
 		value = Std.int(value);
@@ -1244,9 +1244,9 @@ class BitmapTextField extends Sprite
 			_pendingTextChange = true;
 			checkImmediateChanges();
 		}
-		#if !flash
+
 		return value;
-		#end
+
 	}
 	
 	private function set_alignment(value:BitmapTextAlign):BitmapTextAlign 
